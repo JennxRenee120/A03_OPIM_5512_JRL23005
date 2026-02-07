@@ -18,7 +18,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 df = pd.read_csv("california_housing_train.csv")
 # Creating Histogram:
 df['median_house_value'].hist()
-plt.show()
+plt.title("Histogram of Median House Value")
+plt.xlabel("Median House Value")
+plt.ylabel("Count")
+plt.savefig("figs/histogram_MHV.png")
+plt.close()
 
 # Viewing Imbalanced Data: 
 df['median_house_value'] = np.where(df['median_house_value'] < 380000, 1, 0)
@@ -147,20 +151,24 @@ results['accuracy'].hist( bins = 10)
 plt.title("Accuracy Across 30 Splits")
 plt.xlabel("Accuracy")
 plt.ylabel("Count")
-plt.show()
+plt.savefig("figs/Accuracy30.png")
+plt.close()
 
 ## Plotting Precision: 
 results['precision'].hist(bins = 10)
 plt.title("Precision Across 30 Splits")
 plt.xlabel("Precision")
 plt.ylabel("Count")
-plt.show()
+plt.savefig("figs/Precision30.png")
+plt.close()
 
 ## Plotting Recall: 
 results["recall"].hist(bins = 10)
 plt.title("Recall Across 30 Splits")
-plt.xlabel("Recall"); plt.ylabel("Count")
-plt.show()
+plt.xlabel("Recall")
+plt.ylabel("Count")
+plt.savefig("figs/Recall30.png")
+plt.close()
 
 
 # Trying 100 Times to See Difference in Results:
@@ -195,17 +203,21 @@ results['accuracy'].hist( bins = 10)
 plt.title("Accuracy Across 100 Splits")
 plt.xlabel("Accuracy")
 plt.ylabel("Count")
-plt.show()
+plt.savefig("figs/Accuracy100.png")
+plt.close()
 
 ## Plotting Precision: 
 results['precision'].hist(bins = 10)
 plt.title("Precision Across 100 Splits")
 plt.xlabel("Precision")
 plt.ylabel("Count")
-plt.show()
+plt.savefig("figs/Precision100.png")
+plt.close()
 
 ## Plotting Recall: 
 results["recall"].hist(bins = 10)
 plt.title("Recall Across 100 Splits")
-plt.xlabel("Recall"); plt.ylabel("Count")
-plt.show()
+plt.xlabel("Recall")
+plt.ylabel("Count")
+plt.savefig("figs/Recall100.png")
+plt.close()
